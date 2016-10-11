@@ -13,7 +13,7 @@ As you probably know, passing the 70-532 Developing Microsoft Azure Solutions ce
 To lear more about the PowerShell scripts you can check out my blog post - [Passing the 70-532 Developing Microsoft Azure Solutions Certification Exam - PowerShell Scripts](http://www.newventuresoftware.com/blog/passing-the-70-532-developing-microsoft-azure-solutions-certification-exam---powershell-scripts) 
 
 ## Quick Facts
-Quicks facts is a compilations of statements that explain a particular feature/behavior of a service/product offered by Azure. [Click here to see the Quick Facts file.](docs/quick-facts.md) 
+Quicks facts is a compilation of statements that explain a particular feature/behavior of a service/product offered by Azure. [Click here to see the Quick Facts file.](docs/quick-facts.md) 
 
 ## ServiceDefinition vs ServiceConfiguration Cheat Sheet
 Comming soon
