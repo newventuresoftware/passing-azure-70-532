@@ -1,5 +1,6 @@
 # ServiceDefinition vs ServiceConfiguration Cheat Sheet
 Last updated - 2016-10-19
+![Image](./images/blue-dot.png?raw=true)
 
 ## Service Definition and Service Configuration Schemas
 The information here is based on the schemas for [ServiceDefinition](https://msdn.microsoft.com/en-us/library/azure/ee758711.aspx) and [ServiceConfiguration](https://msdn.microsoft.com/en-us/library/azure/ee758711.aspx)
