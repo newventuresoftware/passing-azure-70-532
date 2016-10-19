@@ -16,7 +16,7 @@ To lear more about the PowerShell scripts you can check out my blog post - [Pass
 Quicks facts is a compilation of statements that explain a particular feature/behavior of a service/product offered by Azure. [Click here to see the Quick Facts file.](docs/quick-facts.md) 
 
 ## ServiceDefinition vs ServiceConfiguration Cheat Sheet
-Remembering what settings go into the service definition file (.csdef) and what settings go into the service configuration file (.cscfg) is tricky. I have prepared a table (cheat sheet) that list all settings and the file where they should be specified.
+Remembering what settings go into the service definition file (.csdef) and what settings go into the service configuration file (.cscfg) is tricky. I have prepared a table (cheat sheet) that list all settings and the file where they should be specified.  
 [Click here to see the ServiceDefinition vs ServiceConfiguration Cheat Sheet.](docs/definition-vs-configuration.md)
 
 # Additional resources
