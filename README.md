@@ -18,3 +18,9 @@ Quicks facts is a compilation of statements that explain a particular feature/be
 ## ServiceDefinition vs ServiceConfiguration Cheat Sheet
 Remembering what settings go into the service definition file (.csdef) and what settings go into the service configuration file (.cscfg) is tricky. I have prepared a table (cheat sheet) that list all settings and the file where they should be specified.
 [Click here to see the ServiceDefinition vs ServiceConfiguration Cheat Sheet.](docs/definition-vs-configuration.md)
+
+# Additional resources
+
+[How I passed the 70-532 Developing Microsoft Azure Solutions certification exam](http://pietschsoft.com/post/2015/06/06/How-I-passed-the-70-532-Developing-Microsoft-Azure-Solutions-certification-exam)
+[Microsoft (70-532): Developing Microsoft Azure Solutions - Practice Test](http://www.measureup.com/70-532-Developing-Microsoft-Azure-Solutions-P5566.aspx)
+[Exam Ref 70-532 Developing Microsoft Azure Solutions](https://www.amazon.com/70-532-Developing-Microsoft-Azure-Solutions/dp/0735697043/)
