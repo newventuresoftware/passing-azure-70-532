@@ -21,6 +21,6 @@ Remembering what settings go into the service definition file (.csdef) and what 
 
 # Additional resources
 
-[How I passed the 70-532 Developing Microsoft Azure Solutions certification exam](http://pietschsoft.com/post/2015/06/06/How-I-passed-the-70-532-Developing-Microsoft-Azure-Solutions-certification-exam)
-[Microsoft (70-532): Developing Microsoft Azure Solutions - Practice Test](http://www.measureup.com/70-532-Developing-Microsoft-Azure-Solutions-P5566.aspx)
-[Exam Ref 70-532 Developing Microsoft Azure Solutions](https://www.amazon.com/70-532-Developing-Microsoft-Azure-Solutions/dp/0735697043/)
+[How I passed the 70-532 Developing Microsoft Azure Solutions certification exam](http://pietschsoft.com/post/2015/06/06/How-I-passed-the-70-532-Developing-Microsoft-Azure-Solutions-certification-exam)  
+[Microsoft (70-532): Developing Microsoft Azure Solutions - Practice Test](http://www.measureup.com/70-532-Developing-Microsoft-Azure-Solutions-P5566.aspx)  
+[Exam Ref 70-532 Developing Microsoft Azure Solutions](https://www.amazon.com/70-532-Developing-Microsoft-Azure-Solutions/dp/0735697043/)  
