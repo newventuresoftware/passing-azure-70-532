@@ -1,5 +1,5 @@
 # Azure Quick Facts
-Last updated - 2016-11-11
+Last updated - 2016-10-11
 
 ## Cloud Services
 * Role startup tasks cannot directly execute a Powershell script – use console application or a batch file that starts the PowerShell script.
