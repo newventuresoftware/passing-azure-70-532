@@ -2,38 +2,40 @@
 Last updated - 2016-10-19
 
 ## Service Definition and Service Configuration Schemas
-The information here is based on the schemas  
+The information here is based on the schemas for [ServiceDefinition](https://msdn.microsoft.com/en-us/library/azure/ee758711.aspx) and [ServiceConfiguration](https://msdn.microsoft.com/en-us/library/azure/ee758711.aspx)
+
+## Cheat Sheet
 
 Setting | Service Definition (.csdef) | Service Configuration (.cscfg)
 --- | :---: | :---:
-Service name | ![Blue dot](../images/blue-dot.png)
-Upgrade domain count | ![Blue dot](../images/blue-dot.png)
-Role definitions | ![Blue dot](../images/blue-dot.png) |
-Role name | ![Blue dot](../images/blue-dot.png) |
-Role virtual machine size | ![Blue dot](../images/blue-dot.png) |
-Role ConfigurationSettings | ![Blue dot](../images/blue-dot.png) | ![Blue dot](../images/blue-dot.png)
-Role LocalResources | ![Blue dot](../images/blue-dot.png) |
-Role LocalStorage| ![Blue dot](../images/blue-dot.png) |
-Role enpoints | ![Blue dot](../images/blue-dot.png)
-Role certificates | ![Blue dot](../images/blue-dot.png) | ![Blue dot](../images/blue-dot.png)
-Associate endpoint with certificate | ![Blue dot](../images/blue-dot.png) |
-Certificate thumbprint and algorithm | | ![Blue dot](../images/blue-dot.png)
-Role module imports | ![Blue dot](../images/blue-dot.png)
-Role execution context | ![Blue dot](../images/blue-dot.png)
-Role environment variables | ![Blue dot](../images/blue-dot.png)
-Role startup task | ![Blue dot](../images/blue-dot.png)
-Role content files and folders | ![Blue dot](../images/blue-dot.png)
-Web Role sites | ![Blue dot](../images/blue-dot.png)
-Web Role site endpoint bindings | ![Blue dot](../images/blue-dot.png)
-Network Traffic Rules | ![Blue dot](../images/blue-dot.png)
-Load Balancer Probes | ![Blue dot](../images/blue-dot.png)
-Network configuration | | ![Blue dot](../images/blue-dot.png)
-DNS servers | | ![Blue dot](../images/blue-dot.png)
-Virtual network of cloud service | | ![Blue dot](../images/blue-dot.png)
-Access control for enpoints | | ![Blue dot](../images/blue-dot.png)
-Reserved IPs | | ![Blue dot](../images/blue-dot.png)
-Associate roles with subnet | | ![Blue dot](../images/blue-dot.png)
-Service Guest OS | | ![Blue dot](../images/blue-dot.png)
-Service Guest OS version | | ![Blue dot](../images/blue-dot.png)
-Role instance count | | ![Blue dot](../images/blue-dot.png)
+Service name | <img src="../images/blue-dot.png">
+Upgrade domain count | <img src="../images/blue-dot.png">
+Role definitions | <img src="../images/blue-dot.png"> |
+Role name | <img src="../images/blue-dot.png"> |
+Role virtual machine size | <img src="../images/blue-dot.png"> |
+Role ConfigurationSettings | <img src="../images/blue-dot.png"> | <img src="../images/blue-dot.png">
+Role LocalResources | <img src="../images/blue-dot.png"> |
+Role LocalStorage| <img src="../images/blue-dot.png"> |
+Role enpoints | <img src="../images/blue-dot.png">
+Role certificates | <img src="../images/blue-dot.png"> | <img src="../images/blue-dot.png">
+Associate endpoint with certificate | <img src="../images/blue-dot.png"> |
+Certificate thumbprint and algorithm | | <img src="../images/blue-dot.png">
+Role module imports | <img src="../images/blue-dot.png">
+Role execution context | <img src="../images/blue-dot.png">
+Role environment variables | <img src="../images/blue-dot.png">
+Role startup task | <img src="../images/blue-dot.png">
+Role content files and folders | <img src="../images/blue-dot.png">
+Web Role sites | <img src="../images/blue-dot.png">
+Web Role site endpoint bindings | <img src="../images/blue-dot.png">
+Network Traffic Rules | <img src="../images/blue-dot.png">
+Load Balancer Probes | <img src="../images/blue-dot.png">
+Network configuration | | <img src="../images/blue-dot.png">
+DNS servers | | <img src="../images/blue-dot.png">
+Virtual network of cloud service | | <img src="../images/blue-dot.png">
+Access control for enpoints | | <img src="../images/blue-dot.png">
+Reserved IPs | | <img src="../images/blue-dot.png">
+Associate roles with subnet | | <img src="../images/blue-dot.png">
+Service Guest OS | | <img src="../images/blue-dot.png">
+Service Guest OS version | | <img src="../images/blue-dot.png">
+Role instance count | | <img src="../images/blue-dot.png">
 
