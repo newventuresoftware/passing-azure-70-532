@@ -27,4 +27,4 @@ New-AzureRmStorageAccount -StorageAccountName "$storageAccountName" -Location "$
 Publish-AzureRmVMDscConfiguration ".\dsc-for-vm.ps1" -ResourceGroupName $resourceGroupName -StorageAccountName $storageAccountName -Force
 
 # Apply DSC to VM
-Set-AzureRmVMDscExtension -ResourceGroupName $resourceGroupName -VMName "$vmName" -ArchiveBlobName "dsc-for-vm.ps1.zip" -ArchiveStorageAccountName $storageAccountName -Version "2.8" -Location "$location"
+Set-AzureRmVMDscExtension -ResourceGroupName $resourceGroupName -VMName "$vmName" -ArchiveBlobName "dsc-for-vm.ps1.zip" -ConfigurationName "VmDsc" -ArchiveStorageAccountName $storageAccountName -Version "2.8" -Location "$location"
