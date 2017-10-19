@@ -17,15 +17,26 @@
      
 #> 
 
-$namePrefix = (get-random -Count 10 -InputObject "123456".ToCharArray()) -join ''
-$websiteName = $namePrefix + "website"
+$nameSuffix = (get-random -Count 10 -InputObject "123456".ToCharArray()) -join ''
+$resourceGroupName = "grp" + $nameSuffix
+$webAppName = "site" + $nameSuffix
+$location="North Europe"
 $jobName = "SimpleWebJob"
-$jobCollectionName = $namePrefix + "jobCollection5"
+$jobCollectionName = "jobCollection" + $nameSuffix
 $location = "North Europe"
 
-Write-Host "Creating infrastructure (prefix: $namePrefix)..."
+Write-Host "Creating infrastructure (group: $resourceGroupName)..."
 
-$website = New-AzureWebsite -Name "$websiteName" -Location "NorthEurope"
+# Create a resource group.
+$resourceGroup = New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
+
+# Create an App Service plan in Free tier.
+New-AzureRmAppServicePlan -Name $webAppName -Location $location -ResourceGroupName $resourceGroupName -Tier Free
+
+# Create a web app.
+$website = New-AzureRmWebApp -Name $webAppName -Location $location -AppServicePlan $webAppName -ResourceGroupName $resourceGroupName
+
+Write-Host "Running core script..."
 
 # Generating authorization header
 $credentials = "$($website.PublishingUsername):$($website.PublishingPassword)"
@@ -33,8 +44,9 @@ $credentialsBytes = [System.Text.Encoding]::UTF8.GetBytes($credentials);
 $credentialsEncoded = [System.Convert]::ToBase64String($credentialsBytes);
 $headers = @{"Authorization" = "Basic $credentialsEncoded"}
 
-Write-Host "Running core script..."
+Write-Error "New-AzureWebsiteJob equivalent is currently not available for ARM"
+#$job = New-AzureWebsiteJob -Name $website.Name -JobName "$jobName" -JobType Triggered -JobFile ".\SimpleWebJob.zip"
+$jobCollection = New-AzureRmSchedulerJobCollection -Location $location -JobCollectionName $jobCollectionName -ResourceGroupName $resourceGroupName
+New-AzureRmSchedulerHttpJob -JobCollectionName $jobCollectionName -JobName "$jobName" -Method POST -URI "$($job.Url)\run" -StartTime "2015-01-1" -EndTime "2020-01-1" -Interval 1 -Frequency Minute -Headers $headers
 
-$job = New-AzureWebsiteJob -Name $website.Name -JobName "$jobName" -JobType Triggered -JobFile ".\SimpleWebJob.zip"
-$jobCollection = New-AzureSchedulerJobCollection -Location $location -JobCollectionName $jobCollectionName
-New-AzureSchedulerHttpJob -JobCollectionName $jobCollectionName -JobName "$jobName" -Method POST -URI "$($job.Url)\run" -Location $location -StartTime "2015-01-1" -EndTime "2020-01-1" -Interval 1 -Frequency Minute -Headers $headers
+
