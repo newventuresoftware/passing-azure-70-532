@@ -9,7 +9,7 @@
 
 ### Initial Infrastructure
 
-    Two SQL Server are created - one primary (North Europe) and one secondary (West Europe).
+    Two SQL Server are created - one primary (East US) and one secondary (West US 2).
     One database is created on the primary server.
     Continuous copy of the database is created on the secondary server.
      
@@ -29,11 +29,11 @@ if($myIP -eq "") {
 
 Write-Host "Creating infrastructure (group: $resourceGroupName)..."
 
-$resourceGroup = New-AzureRmResourceGroup -Name $resourceGroupName -Location "North Europe"
+$resourceGroup = New-AzureRmResourceGroup -Name $resourceGroupName -Location "East US"
 $securePass = ConvertTo-SecureString –String $dbPass –AsPlainText -Force
 $dbCredentials = New-Object –TypeName "System.Management.Automation.PSCredential" –ArgumentList $dbUser, $securePass
-$server = New-AzureRmSqlServer -ResourceGroupName $resourceGroupName -Location "North Europe" -SqlAdministratorCredentials $dbCredentials -ServerVersion "12.0" -ServerName $serverName
-$serverSecondary = New-AzureRmSqlServer -ResourceGroupName $resourceGroupName -Location "West Europe" -SqlAdministratorCredentials $dbCredentials -ServerVersion "12.0" -ServerName $serverSecondaryName
+$server = New-AzureRmSqlServer -ResourceGroupName $resourceGroupName -Location "East US" -SqlAdministratorCredentials $dbCredentials -ServerVersion "12.0" -ServerName $serverName
+$serverSecondary = New-AzureRmSqlServer -ResourceGroupName $resourceGroupName -Location "West US 2" -SqlAdministratorCredentials $dbCredentials -ServerVersion "12.0" -ServerName $serverSecondaryName
 
 New-AzureRmSqlServerFirewallRule -ServerName $serverName -FirewallRuleName "adminIP" -StartIpAddress $myIP -EndIpAddress $myIP -ResourceGroupName $resourceGroupName
 $database = New-AzureRmSqlDatabase -DatabaseName $dbName -RequestedServiceObjectiveName "S0" -ServerName $serverName -ResourceGroupName $resourceGroupName -Edition Standard

@@ -8,6 +8,7 @@
     Metrics starting ohe hour from now are retrieved. Metrics for the Production slot with time grain of 1 minute are retrieved.
     Unfortunately metrics will not be available when using a bran-new website. It is best to test this with an already existing site.
 
+    To get metrics for e specific slot use Get-AzureRmWebAppSlotMetrics
 
 ### Initial Infrastructure
 
@@ -15,17 +16,25 @@
      
 #> 
 
-$namePrefix = (get-random -Count 8 -InputObject "abcdefg0123456789".ToCharArray()) -join ''
-$websiteName = $namePrefix + "site"
+$nameSuffix = (get-random -Count 10 -InputObject "123456".ToCharArray()) -join ''
+$resourceGroupName = "grp" + $nameSuffix
+$webAppName = "site" + $nameSuffix
+$location="North Europe"
 
-Write-Host "Creating infrastructure (prefix: $namePrefix)..."
+Write-Host "Creating infrastructure (group: $resourceGroupName)..."
 
-New-AzureWebsite -Name $websiteName -Location "North Europe"
+# Create a resource group.
+$resourceGroup = New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
+
+# Create an App Service plan in Free tier.
+New-AzureRmAppServicePlan -Name $webAppName -Location $location -ResourceGroupName $resourceGroupName -Tier Free
+
+# Create a web app.
+New-AzureRmWebApp -Name $webAppName -Location $location -AppServicePlan $webAppName -ResourceGroupName $resourceGroupName
 
 Write-Host "Running core script..."
 
-$website = Get-AzureWebsite -Name $websiteName
-$metrics = Get-AzureWebsiteMetric -Name "$websiteName" -StartDate (Get-Date).AddHours(-1) -MetricNames "Requests", "AverageResponseTime", "Http4xx" -Slot Production -TimeGrain "PT1M"
+$metrics = Get-AzureRmWebAppMetrics -ResourceGroupName "$resourceGroupName" -Name "$webAppName" -StartTime (Get-Date).AddHours(-1) -EndTime (Get-Date) -Metrics {"Requests", "AverageResponseTime", "Http4xx"} -Granularity "PT1M"
 
 Write-Host "Requests:"
 $metrics[0].Data.Values | Format-Table *
