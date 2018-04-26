@@ -29,8 +29,8 @@ Last updated - 2016-10-11
 
 ## Access Control Lists
 * When an endpoint is first created, all traffic is permitted for that endpoint.
-* When one or more Permit rules are added, traffic is implicitly denied for all IP ranged not included in the Permit rules.
-* When one or more Deny rules are added, traffic is implicitly allowed for all IP ranged now included in the Deny rules.
+* When one or more Permit rules are added, traffic is implicitly denied for all IP ranges not included in the Permit rules.
+* When one or more Deny rules are added, traffic is implicitly allowed for all IP ranges not included in the Deny rules.
 * No implicit rules are applied when both Permit and Deny rules are used.
 
 ## Cloud Storage
