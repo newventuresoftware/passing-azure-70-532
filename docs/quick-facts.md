@@ -23,7 +23,7 @@ Last updated - 2016-10-11
 * Zone redundant storage does not support page blobs.
 
 ## Virtual Machines
-* Sysprep with Generalzie option is used to prepare a VM to be captured as an image.
+* Sysprep with Generalize option is used to prepare a VM to be captured as an image.
 * Waagent with Deprovision option is used to prepare a Linux to be captured as an image.
 * Only VMs in the same cloud service can be part of an availability set.
 
